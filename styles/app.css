@@ -30,7 +30,9 @@ html {
 }
 
 body{
-    background-color: var(--purple-light-1);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--purple-light-1);
   color: var(--purple-dark-2);
   font-family: var(--font-family-text);
   font-weight: var(--font-weight-text1);
@@ -257,20 +259,28 @@ button {
 
 /* Generic List (search, trending & category) */
 .genericList-container {
-  display: flex;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-auto-rows: 220px;
+  gap: 20px;
+  padding: 20px;
+  /*display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 32px 24px;
+  padding: 32px 24px;*/
 }
 
 .genericList-container .movie-container {
-  display: inline-block;
-  width: 47.5%;
+  display: flex;
+  flex-direction: column;
 }
 
 .genericList-container .movie-img {
-  width: 100%;
+  height: 180px;
 }
 
 
@@ -346,12 +356,21 @@ footer {
   background-color: var(--purple-medium-3);
   color: var(--purple-light-2);
   text-align: center;
-  height: 48px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+footer ul{
+  list-style: none;
+}
+footer li{
+  margin: 10px 0;
+}
+footer a{
+  text-decoration: none;
+  color: var(--purple-light-2);
+}
 
 /* Navigation */
 .inactive {
